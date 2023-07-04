@@ -21,7 +21,7 @@ class Button extends StatelessWidget {
         backgroundColor: accentColor,
         padding: EdgeInsets.all(12.0)
       ),
-      onPressed: () => func,
+      onPressed: () => func(),
       child: Text(
         text,
         style: regularFont.copyWith(

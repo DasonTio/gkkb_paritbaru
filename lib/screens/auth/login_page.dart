@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:gkkb_paritbaru/utils/core/route_config.dart';
 import 'package:gkkb_paritbaru/utils/core/size_config.dart';
 import 'package:gkkb_paritbaru/config/constant.dart';
 import 'package:gkkb_paritbaru/utils/widgets/button.dart';
@@ -52,7 +53,12 @@ class LoginPage extends StatelessWidget {
                         text: "Password",
                       ),
                       SizedBox(height: SizeConfig.blockHeight * 1.5),
-                      Button(text: 'Login', func: () => {}),
+                      Button(
+                        text: 'Login',
+                        func: () => {
+                          Navigator.of(context).pushNamed(RouteConfig.homeRoute)
+                        },
+                      ),
                       SizedBox(height: SizeConfig.blockHeight),
                       Container(
                         alignment: Alignment.centerRight,
@@ -88,7 +94,10 @@ class LoginPage extends StatelessWidget {
                               text: "Register",
                               style: TextStyle(color: accentColor),
                               recognizer: TapGestureRecognizer()
-                                ..onTap = () => {},
+                                ..onTap = (){
+                                      Navigator.of(context)
+                                          .pushNamed(RouteConfig.registerRoute);
+                                    },
                             ),
                           ],
                         ),
