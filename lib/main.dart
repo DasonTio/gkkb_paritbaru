@@ -7,7 +7,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final isAuthenticated = await Prefs.getBool(key: "isAuthenticated");
   if (isAuthenticated) {
-    runApp(MyApp(routes: RouteConfig.homeRoute));
+    runApp(MyApp(routes: RouteConfig.navRoute));
   } else {
     runApp(MyApp(routes: RouteConfig.loginRoute));
   }
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         /**
          * Home Routing
          */
-        RouteConfig.homeRoute: (context) => RouteConfig.homePage,
+        RouteConfig.navRoute: (context) => RouteConfig.navView,
       },
     );
   }

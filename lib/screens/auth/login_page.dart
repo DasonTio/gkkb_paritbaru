@@ -56,7 +56,7 @@ class LoginPage extends StatelessWidget {
                       Button(
                         text: 'Login',
                         func: () => {
-                          Navigator.of(context).pushNamed(RouteConfig.homeRoute)
+                          Navigator.of(context).pushNamed(RouteConfig.navRoute)
                         },
                       ),
                       SizedBox(height: SizeConfig.blockHeight),
