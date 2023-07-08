@@ -7,20 +7,35 @@ class Button extends StatelessWidget {
     Key? key,
     required this.text,
     required this.func,
-    this.isExpanded,
+    this.isExpanded = false,
   }) : super(key: key);
 
   final String text;
   final Function func;
-  final bool? isExpanded;
+  final bool isExpanded;
 
   @override
   Widget build(BuildContext context) {
+    if (isExpanded) {
+      return Container(
+        width: double.infinity,
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              backgroundColor: accentColor, padding: EdgeInsets.all(12.0)),
+          onPressed: () => func(),
+          child: Text(
+            text,
+            style: regularFont.copyWith(
+              fontSize: SizeConfig.blockWidth * 4,
+            ),
+          ),
+        ),
+      );
+    }
+    
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: accentColor,
-        padding: EdgeInsets.all(12.0)
-      ),
+          backgroundColor: accentColor, padding: EdgeInsets.all(12.0)),
       onPressed: () => func(),
       child: Text(
         text,

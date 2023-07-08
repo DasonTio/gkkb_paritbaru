@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gkkb_paritbaru/config/constant.dart';
-import 'package:gkkb_paritbaru/screens/nav/pages/attendance_page.dart';
-import 'package:gkkb_paritbaru/screens/nav/pages/home_page.dart';
-import 'package:gkkb_paritbaru/screens/nav/pages/profile_page.dart';
-import 'package:gkkb_paritbaru/screens/nav/pages/schedule_page.dart';
+import 'package:gkkb_paritbaru/screens/nav/attendance/attendance_page.dart';
+import 'package:gkkb_paritbaru/screens/nav/home/home_page.dart';
+import 'package:gkkb_paritbaru/screens/nav/profile/profile_page.dart';
+import 'package:gkkb_paritbaru/screens/nav/schedule/schedule_page.dart';
 import 'package:gkkb_paritbaru/utils/core/size_config.dart';
 
 class NavView extends StatefulWidget {
