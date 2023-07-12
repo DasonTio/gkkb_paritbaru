@@ -39,6 +39,7 @@ class MyApp extends StatelessWidget {
          * Home Routing
          */
         RouteConfig.navRoute: (context) => RouteConfig.navView,
+        RouteConfig.scannerRoute:(context) => RouteConfig.scannerPage,
       },
     );
   }

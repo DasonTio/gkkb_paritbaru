@@ -16,6 +16,6 @@ TextStyle boldFont = GoogleFonts.poppins(fontWeight: FontWeight.w600);
 TextStyle blackFont = GoogleFonts.poppins(fontWeight: FontWeight.w800);
 
 /**
- * Home Page
+ * Navigation Pages
  */
-const Color homeBackgroundColor = Color(0xFFe0f2fe);
+const Color navigationBackgroundColor = Color(0xFFe0f2fe);

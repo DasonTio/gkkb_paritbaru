@@ -21,7 +21,6 @@ class LoginPage extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.symmetric(
             horizontal: SizeConfig.blockWidth * 5,
-            // vertical: 0,
           ),
           width: double.infinity,
           child: Column(
@@ -63,7 +62,7 @@ class LoginPage extends StatelessWidget {
                       Container(
                         alignment: Alignment.centerRight,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {}, 
                           style: TextButton.styleFrom(
                             padding: EdgeInsets.symmetric(
                               horizontal: 8.0,

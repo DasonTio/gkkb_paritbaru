@@ -37,7 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^4.0.4
   shared_preferences: ^2.1.2
-  phosphor_flutter: ^2.0.0
+  mobile_scanner: ^3.3.0
 
 dev_dependencies:
   flutter_test:

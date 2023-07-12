@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(      
-      backgroundColor: homeBackgroundColor,
+      backgroundColor: navigationBackgroundColor,
       body: SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.max,

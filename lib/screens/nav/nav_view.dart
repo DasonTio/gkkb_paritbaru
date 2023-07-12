@@ -4,7 +4,9 @@ import 'package:gkkb_paritbaru/screens/nav/attendance/attendance_page.dart';
 import 'package:gkkb_paritbaru/screens/nav/home/home_page.dart';
 import 'package:gkkb_paritbaru/screens/nav/profile/profile_page.dart';
 import 'package:gkkb_paritbaru/screens/nav/schedule/schedule_page.dart';
+import 'package:gkkb_paritbaru/utils/core/route_config.dart';
 import 'package:gkkb_paritbaru/utils/core/size_config.dart';
+
 
 class NavView extends StatefulWidget {
   const NavView({Key? key}) : super(key: key);
@@ -50,7 +52,9 @@ class _NavViewState extends State<NavView> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.qr_code_scanner),
         backgroundColor: accentColor,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed(RouteConfig.scannerRoute);
+        },
         elevation: 0,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
