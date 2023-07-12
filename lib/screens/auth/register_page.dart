@@ -19,79 +19,111 @@ class RegisterPage extends StatelessWidget {
     SizeConfig(context);
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.symmetric(
-            horizontal: SizeConfig.blockWidth * 5,
-          ),
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(height: SizeConfig.blockHeight * 8),
-              Image.asset(
-                'assets/images/app_logo.webp',
-                width: SizeConfig.blockWidth * 70,
+        child: LayoutBuilder(
+          builder: (context, constraint) => SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minHeight: constraint.maxHeight,
               ),
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      FormHeader(text: 'Register'),
-                      SizedBox(height: SizeConfig.blockHeight * 1.5),
-                      FormInputBox(
-                        controller: usernameController,
-                        text: "Username",
-                      ),
-                      SizedBox(height: SizeConfig.blockHeight * 1.5),
-                      FormInputBox(
-                        controller: passwordController,
-                        text: "Password",
-                      ),
-                      SizedBox(height: SizeConfig.blockHeight * 1.5),
-                      FormInputBox(
-                        controller: confirmPasswordController,
-                        text: "Confirm Password",
-                      ),
-                      SizedBox(height: SizeConfig.blockHeight * 1.5),
-                      // DropdownButton(items: [
-                      //   DropdownMenuItem(child: Text('Ibadah Umum')),
-                      //   DropdownMenuItem(child: Text('Ibadah Remaja')),
-                      // ], onChanged: (val) {}),
-                      // SizedBox(height: SizeConfig.blockHeight * 1.5),
-                      Button(
-                        text: 'Register',
-                        func: () => {},
-                      ),
-                      SizedBox(height: SizeConfig.blockHeight * 3),
-                      RichText(
-                        textAlign: TextAlign.center,
-                        text: TextSpan(
-                          style: regularFont.copyWith(
-                            fontSize: SizeConfig.blockWidth * 3.5,
-                            color: secondaryColor,
-                          ),
-                          children: [
-                            TextSpan(text: "Already have an account? "),
-                            TextSpan(
-                              text: "Login",
-                              style: TextStyle(color: accentColor),
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = () {
-                                  Navigator.of(context)
-                                      .pushNamed(RouteConfig.loginRoute);
-                                },
+              child: Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: SizeConfig.blockWidth * 6,
+                ),
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Image.asset(
+                      'assets/images/app_logo.webp',
+                      width: SizeConfig.blockWidth * 70,
+                    ),
+                    Container(
+                      height: SizeConfig.blockHeight * 55,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            height: SizeConfig.blockHeight * 45,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                FormHeader(text: 'Register'),
+                                FormInputBox(
+                                  controller: usernameController,
+                                  text: 'Username',
+                                ),
+                                FormInputBox(
+                                  controller: passwordController,
+                                  text: 'Password',
+                                ),
+                                FormInputBox(
+                                  controller: confirmPasswordController,
+                                  text: 'Confirm Password',
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      width: 1,
+                                      color: inactiveColor,
+                                    ),
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(6)),
+                                  ),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: SizeConfig.blockWidth * 4,
+                                  ),
+                                  child: DropdownButton(
+                                    isExpanded: true,
+                                    underline: SizedBox(),
+                                    items: const [
+                                      // TODO Make this dynamic from API
+                                      DropdownMenuItem(
+                                        child: Text('Ibadah Umum'),
+                                      ),
+                                    ],
+                                    onChanged: (value) {},
+                                  ),
+                                ),
+                                Button(
+                                  text: 'Register',
+                                  func: () {},
+                                  isExpanded: true,
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                          Divider(),
+                          RichText(
+                            textAlign: TextAlign.center,
+                            text: TextSpan(
+                              style: regularFont.copyWith(
+                                fontSize: SizeConfig.blockWidth * 3.5,
+                                color: secondaryColor,
+                              ),
+                              children: [
+                                TextSpan(text: "Already have an account? "),
+                                TextSpan(
+                                  text: "Login",
+                                  style: TextStyle(color: accentColor),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () {
+                                      Navigator.of(context)
+                                          .pushNamed(RouteConfig.loginRoute);
+                                    },
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
-            ],
+            ),
           ),
         ),
       ),
