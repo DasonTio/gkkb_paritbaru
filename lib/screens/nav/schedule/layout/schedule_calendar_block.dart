@@ -8,7 +8,7 @@ class ScheduleCalendarBlock extends StatelessWidget {
     required this.index,
   }) : super(key: key);
 
-  final num index;
+  num index;
 
   @override
   Widget build(BuildContext context) {
