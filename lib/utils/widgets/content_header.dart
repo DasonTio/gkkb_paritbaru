@@ -5,9 +5,9 @@ import 'package:gkkb_paritbaru/utils/core/size_config.dart';
 class ContentHeader extends StatelessWidget {
   ContentHeader({Key? key, required this.text, this.color, this.size}) : super(key: key);
 
-  String text;
-  Color? color;
-  double? size;
+  final String text;
+  final Color? color;
+  final double? size;
 
   @override
   Widget build(BuildContext context) {

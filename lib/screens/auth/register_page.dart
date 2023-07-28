@@ -10,9 +10,9 @@ import 'package:gkkb_paritbaru/utils/widgets/form_input_box.dart';
 class RegisterPage extends StatelessWidget {
   RegisterPage({Key? key}) : super(key: key);
 
-  TextEditingController usernameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  TextEditingController confirmPasswordController = TextEditingController();
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

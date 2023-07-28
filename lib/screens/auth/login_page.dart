@@ -11,8 +11,8 @@ import 'package:gkkb_paritbaru/utils/widgets/gap.dart';
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
 
-  TextEditingController usernameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +36,12 @@ class LoginPage extends StatelessWidget {
                         'assets/images/app_logo.webp',
                         width: SizeConfig.blockWidth * 70,
                       ),
-                      Container(
+                      SizedBox(
                         height: SizeConfig.blockHeight * 45,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            Container(
+                            SizedBox(
                               height: SizeConfig.blockHeight * 38,
                               child: Column(
                                 mainAxisAlignment:
